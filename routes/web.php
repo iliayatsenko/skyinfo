@@ -12,7 +12,7 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::get('skymonitors.index', Index::class)
+Route::get('skymonitors', Index::class)
     ->middleware(['auth', 'verified'])
     ->name('skymonitors.index');
 

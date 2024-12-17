@@ -3,6 +3,7 @@
 namespace App\Livewire\Skymonitors;
 
 use App\Models\Skymonitor;
+use Illuminate\Support\Facades\Gate;
 use Illuminate\View\View;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
@@ -25,6 +26,8 @@ class Index extends Component
 
     public function delete(Skymonitor $skymonitor)
     {
+        Gate::denyIf(fn() => $skymonitor->user_id !== auth()->id());
+
         $skymonitor->delete();
 
         return $this->redirectRoute('skymonitors.index', navigate: true);
