@@ -25,7 +25,6 @@
                                 <tr>
                                     <th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">No</th>
 
-									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">User Id</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">City</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Email</th>
 									<th scope="col" class="py-3 pl-4 pr-3 text-left text-xs font-semibold uppercase tracking-wide text-gray-500">Phone</th>
@@ -40,7 +39,6 @@
                                     <tr class="even:bg-gray-50" wire:key="{{ $skymonitor->id }}">
                                         <td class="whitespace-nowrap py-4 pl-4 pr-3 text-sm font-semibold text-gray-900">{{ ++$i }}</td>
 
-										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $skymonitor->user_id }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $skymonitor->city }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $skymonitor->email }}</td>
 										<td class="whitespace-nowrap px-3 py-4 text-sm text-gray-500">{{ $skymonitor->phone }}</td>

@@ -8,7 +8,7 @@ use Livewire\Form;
 class SkymonitorForm extends Form
 {
     public ?Skymonitor $skymonitorModel;
-    
+
     public $user_id = '';
     public $city = '';
     public $email = '';
@@ -21,7 +21,7 @@ class SkymonitorForm extends Form
         return [
 			'user_id' => 'required',
 			'city' => 'required|string',
-			'email' => 'string',
+			'email' => 'string|email',
 			'phone' => 'string',
 			'uv_index_threshold' => 'required',
 			'precipitation_threshold' => 'required',
@@ -31,7 +31,7 @@ class SkymonitorForm extends Form
     public function setSkymonitorModel(Skymonitor $skymonitorModel): void
     {
         $this->skymonitorModel = $skymonitorModel;
-        
+
         $this->user_id = $this->skymonitorModel->user_id;
         $this->city = $this->skymonitorModel->city;
         $this->email = $this->skymonitorModel->email;

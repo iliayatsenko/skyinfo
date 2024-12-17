@@ -15,7 +15,9 @@ class Index extends Component
     #[Layout('layouts.app')]
     public function render(): View
     {
-        $skymonitors = Skymonitor::paginate();
+        $skymonitors = Skymonitor::where('user_id', auth()->id())
+            ->latest()
+            ->paginate(2);
 
         return view('livewire.skymonitor.index', compact('skymonitors'))
             ->with('i', $this->getPage() * $skymonitors->perPage());

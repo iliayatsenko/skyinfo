@@ -1,5 +1,7 @@
 <div class="space-y-6">
 
+    <x-text-input wire:model.fill="form.user_id" id="user_id" name="user_id" type="hidden" value="{{ auth()->id() }}"/>
+
     <div>
         <x-input-label for="city" :value="__('City')"/>
         <x-text-input wire:model="form.city" id="city" name="city" type="text" class="mt-1 block w-full" autocomplete="city" placeholder="City"/>
