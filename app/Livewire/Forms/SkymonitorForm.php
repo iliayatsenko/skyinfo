@@ -19,12 +19,12 @@ class SkymonitorForm extends Form
     public function rules(): array
     {
         return [
-			'user_id' => 'required',
+			'user_id' => 'required|numeric',
 			'city' => 'required|string',
-			'email' => 'string|email',
-			'phone' => 'string',
-			'uv_index_threshold' => 'required',
-			'precipitation_threshold' => 'required',
+			'email' => 'nullable|required_without:phone|string|email',
+			'phone' => 'nullable|required_without:email|string',
+			'uv_index_threshold' => 'required|numeric',
+			'precipitation_threshold' => 'required|numeric',
         ];
     }
 
@@ -34,7 +34,7 @@ class SkymonitorForm extends Form
 
         $this->user_id = $this->skymonitorModel->user_id;
         $this->city = $this->skymonitorModel->city;
-        $this->email = $this->skymonitorModel->email;
+        $this->email = $this->skymonitorModel->email ?? auth()->user()->email;
         $this->phone = $this->skymonitorModel->phone;
         $this->uv_index_threshold = $this->skymonitorModel->uv_index_threshold;
         $this->precipitation_threshold = $this->skymonitorModel->precipitation_threshold;
@@ -42,6 +42,7 @@ class SkymonitorForm extends Form
 
     public function store(): void
     {
+        $this->user_id = auth()->id();
         $this->skymonitorModel->create($this->validate());
 
         $this->reset();

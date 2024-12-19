@@ -19,7 +19,7 @@ class Edit extends Component
 
     public function save()
     {
-        Gate::denyIf(fn() => $this->form->skymonitorModel->user_id !== auth()->id());
+        $this->authorize('update', $this->form->skymonitorModel);
 
         $this->form->update();
 
@@ -29,7 +29,7 @@ class Edit extends Component
     #[Layout('layouts.app')]
     public function render()
     {
-        Gate::denyIf(fn() => $this->form->skymonitorModel->user_id !== auth()->id());
+        $this->authorize('update', $this->form->skymonitorModel);
 
         return view('livewire.skymonitor.edit');
     }

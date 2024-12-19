@@ -20,7 +20,7 @@ class Show extends Component
     #[Layout('layouts.app')]
     public function render()
     {
-        Gate::denyIf(fn() => $this->form->skymonitorModel->user_id !== auth()->id());
+        $this->authorize('view', $this->form->skymonitorModel);
 
         return view('livewire.skymonitor.show', ['skymonitor' => $this->form->skymonitorModel]);
     }

@@ -26,7 +26,7 @@ class Index extends Component
 
     public function delete(Skymonitor $skymonitor)
     {
-        Gate::denyIf(fn() => $skymonitor->user_id !== auth()->id());
+        $this->authorize('delete', $skymonitor);
 
         $skymonitor->delete();
 
