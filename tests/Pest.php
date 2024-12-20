@@ -11,9 +11,19 @@
 |
 */
 
+use Saloon\Http\Faking\MockClient;
+
 pest()->extend(Tests\TestCase::class)
     ->use(Illuminate\Foundation\Testing\RefreshDatabase::class)
-    ->in('Feature');
+    ->in('Feature', 'Console');
+
+// Prevent tests from doing any real HTTP requests
+\Saloon\Config::preventStrayRequests();
+
+// Reset mock client before each test
+uses()
+    ->beforeEach(fn () => MockClient::destroyGlobal())
+    ->in('Feature', 'Console');
 
 /*
 |--------------------------------------------------------------------------

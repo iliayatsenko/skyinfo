@@ -24,6 +24,7 @@ class WeatherApiWeatherProvider implements WeatherProviderInterface
             $weatherApiWeatherDto = $this->weatherApi->send(new WeatherRequest($city))->dto();
 
             return new WeatherDto(
+                city: $city,
                 precipitationMm: $weatherApiWeatherDto->precipMm,
                 uvIndex: $weatherApiWeatherDto->uv,
             );
