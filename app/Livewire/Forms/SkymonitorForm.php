@@ -19,12 +19,12 @@ class SkymonitorForm extends Form
     public function rules(): array
     {
         return [
-			'user_id' => 'required|numeric',
-			'city' => 'required|string',
-			'email' => 'nullable|required_without:phone|string|email',
-			'phone' => 'nullable|required_without:email|string',
-			'uv_index_threshold' => 'required|numeric',
-			'precipitation_threshold' => 'required|numeric',
+            'user_id' => 'required|numeric',
+            'city' => 'required|string',
+            'email' => 'nullable|required_without:phone|string|email',
+            'phone' => 'nullable|required_without:email|string',
+            'uv_index_threshold' => 'required|numeric',
+            'precipitation_threshold' => 'required|numeric',
         ];
     }
 

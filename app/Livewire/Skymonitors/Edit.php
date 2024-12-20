@@ -4,7 +4,6 @@ namespace App\Livewire\Skymonitors;
 
 use App\Livewire\Forms\SkymonitorForm;
 use App\Models\Skymonitor;
-use Illuminate\Support\Facades\Gate;
 use Livewire\Attributes\Layout;
 use Livewire\Component;
 
