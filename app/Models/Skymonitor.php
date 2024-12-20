@@ -19,7 +19,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property $uv_index_threshold
  * @property $precipitation_threshold
  *
- * @package App
  * @mixin Builder
  */
 class Skymonitor extends Model
@@ -34,6 +33,4 @@ class Skymonitor extends Model
      * @var array<int, string>
      */
     protected $fillable = ['user_id', 'city', 'email', 'phone', 'uv_index_threshold', 'precipitation_threshold'];
-
-
 }

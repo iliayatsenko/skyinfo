@@ -19,10 +19,7 @@ class WeatherRequest extends Request implements Cacheable
 
     public function __construct(
         private readonly string $cityName
-    )
-    {
-
-    }
+    ) {}
 
     protected Method $method = Method::GET;
 

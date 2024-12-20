@@ -15,10 +15,7 @@ class WeatherApiConnector extends Connector
 
     public function __construct(
         private readonly string $apiKey
-    )
-    {
-
-    }
+    ) {}
 
     public function resolveBaseUrl(): string
     {

@@ -7,7 +7,5 @@ readonly class WeatherDto
     public function __construct(
         public float $precipMm,
         public float $uv,
-    )
-    {
-    }
+    ) {}
 }

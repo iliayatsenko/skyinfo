@@ -6,7 +6,7 @@ use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\Sequence;
 use Livewire\Livewire;
 
-it ('exists on page', function () {
+it('exists on page', function () {
     $user = User::factory()->create();
 
     $this->actingAs($user);
@@ -81,5 +81,3 @@ it('forbids deletion if user is not the owner', function () {
         ->call('delete', $skymonitor)
         ->assertForbidden();
 });
-
-

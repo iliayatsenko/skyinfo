@@ -4,7 +4,7 @@ use App\Livewire\Skymonitors\Create;
 use App\Models\User;
 use Livewire\Livewire;
 
-it ('exists on page', function () {
+it('exists on page', function () {
     $user = User::factory()->create();
 
     $this->actingAs($user);

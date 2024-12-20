@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace App\Services\Weather;
@@ -11,13 +12,10 @@ class WeatherApiWeatherProvider implements WeatherProviderInterface
 {
     public function __construct(
         private readonly WeatherApiConnector $weatherApi,
-    )
-    {
-
-    }
+    ) {}
 
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      */
     public function getWeather(string $city): WeatherDto
     {

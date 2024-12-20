@@ -10,10 +10,15 @@ class SkymonitorForm extends Form
     public ?Skymonitor $skymonitorModel;
 
     public $user_id = '';
+
     public $city = '';
+
     public $email = '';
+
     public $phone = '';
+
     public $uv_index_threshold = '';
+
     public $precipitation_threshold = '';
 
     public function rules(): array
